@@ -4,8 +4,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "fmt": "biome check .",
-    "lint-check:fix": "biome check . --write",
+    "fmt-lint": "biome check .",
+    "fmt-lint:fix": "biome check . --write",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
