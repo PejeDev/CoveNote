@@ -1,0 +1,29 @@
+services:
+  stash-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: stash
+      POSTGRES_PASSWORD: stash
+      POSTGRES_DB: stash
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  
+  stash-s3: 
+    image: dxflrs/garage:v1.0.1
+    volumes:
+      - ./garage.toml:/etc/garage.toml
+      - s3_meta:/var/lib/garage/meta
+      - s3_data:/var/lib/garage/data
+    restart: unless-stopped
+    ports:
+      - 3900:3900
+      - 3901:3901
+      - 3902:3902
+      - 3903:3903
+    
+volumes:
+  postgres_data:
+  s3_meta:
+  s3_data:
