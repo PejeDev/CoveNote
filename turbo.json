@@ -17,6 +17,16 @@
     "//#fmt-lint": {},
     "//#fmt-lint:fix": {
       "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:deploy": {
+      "cache": false
     }
   }
 }

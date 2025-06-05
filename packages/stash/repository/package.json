@@ -1,0 +1,24 @@
+{
+  "name": "@cove/stash-repository",
+  "version": "0.1.0",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev --skip-generate",
+    "db:deploy": "prisma migrate deploy"
+  },
+  "devDependencies": {
+    "@cove/typescript-config": "workspace:*",
+    "@types/bun": "latest",
+    "typescript": "^5",
+    "prisma": "^6.8.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2"
+  }
+}
